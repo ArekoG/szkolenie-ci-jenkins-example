@@ -14,7 +14,7 @@ pipeline {
                 git url: 'https://github.com/rechandler12/szkolenie-ci-jenkins-example.git', branch: 'main'
 
                 // Run Maven on a Unix agent.
-                sh "mvn clean spring-boot:build-image"
+                sh "mvn clean verify"
             }
         }
     }
@@ -25,7 +25,7 @@ pipeline {
         success {
             junit '**/target/surefire-reports/TEST-*.xml'
             archiveArtifacts 'target/*.jar'
-            slackSend color: "good", message: "Message from Jenkins Pipeline"
+            #slackSend color: "good", message: "Message from Jenkins Pipeline"
         }
     }
 }
