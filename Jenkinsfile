@@ -10,13 +10,7 @@ pipeline {
         jdk "jdk-17"
     }
 
-       parameters {
-        activeChoiceParam('CHOICES', 'PT_SINGLE_SELECT') {
-            script {
-                return ['Option1', 'Option2', 'Option3']
-            }
-        }
-    }
+ 
     stages {
         stage('Checkout'){
             steps{
