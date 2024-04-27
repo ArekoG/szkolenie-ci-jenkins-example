@@ -11,8 +11,8 @@ pipeline {
         stage('Build') {
             steps {
                 // Get some code from a GitHub repository
-                git url: 'https://github.com/rechandler12/szkolenie-ci-jenkins-example.git', branch: 'main'
-
+               // git url: 'https://github.com/rechandler12/szkolenie-ci-jenkins-example.git', branch: 'main'
+                 git branch: 'main', url: 'https://github.com/spring-projects/spring-petclinic'
                 // Run Maven on a Unix agent.
                 sh "mvn clean verify"
             }
