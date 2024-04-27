@@ -25,7 +25,7 @@ pipeline {
         success {
             junit '**/target/surefire-reports/TEST-*.xml'
             archiveArtifacts 'target/*.jar'
-            #slackSend color: "good", message: "Message from Jenkins Pipeline"
+            slackSend color: "good", message: "Message from Jenkins Pipeline"
         }
     }
 }
